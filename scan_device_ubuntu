@@ -1,0 +1,8 @@
+The easiest solution is to use scsitools script rescan-scsi-bus.
+
+sudo apt-get install scsitools
+sudo rescan-scsi-bus
+To do it without installing a utility on 14.04:
+
+echo '1' > /sys/class/scsi_disk/0\:0\:0\:0/device/rescan
+IMPORTANT: Be sure to replace the 0:0:0:0 with the appropriate disk for your purposes.
